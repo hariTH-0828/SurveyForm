@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Registration - Survey Form</title>
+		<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div class="container text-center">
+			<div class="">
+				<h2>User Registration - Sign Up</h2>
+			</div>
+		<form th:action="@{/process_register}" method="post" th:object="${user}" style="max-width: 500px; margin: 0 auto;">
+			<!-- Model Attribute Name is the object name -->
+			<div class="m-3">
+				<!-- E-Mail Field  -->
+				<div class="form-group row">
+					<label class="col-form-label col-4">E-mail</label>
+					<div>
+						<input type="email" class="form-control" th:field="*{email}"
+							required="required" />
+					</div>
+				</div>
+
+				<!-- Password Field -->
+				<div class="form-group row">
+					<label class="col-form-label col-4">Password</label>
+					<div>
+						<input type="password" class="form-control" th:field="*{password}"
+							required="required" minlength="6" maxlength="18" />
+					</div>
+				</div>
+
+				<!-- FirstName Field -->
+				<div class="form-group row">
+					<label class="col-form-label col-4">First Name</label>
+					<div>
+						<input type="text" class="form-control" th:field="*{firstName}"
+							required="required" minlength="4" maxlength="18" />
+					</div>
+				</div>
+
+				<!-- Last Name -->
+				<div class="form-group row">
+					<label class="col-form-label col-4">Last Name</label>
+					<div>
+						<input type="text" class="form-control" th:field="*{lastName}"
+							required="required" minlength="2" maxlength="10" />
+					</div>
+				</div>
+
+				<!-- Submit Button -->
+				<div>
+					<button type="submit" class="btn btn-primary">Sign Up</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	</body>
+</html>
