@@ -21,7 +21,7 @@ public class UserRepositoryTest {
 	@Autowired
 	private TestEntityManager entityManager;
 	
-
+	@Test
 	public void testCreateUser() {
 		User user = new User();
 		user.setEmail("saravananrajula@gmail.com");
@@ -36,8 +36,7 @@ public class UserRepositoryTest {
 		assertThat(existUser.getEmail()).isEqualTo(user.getEmail());
 	}
 	
-	
-	  @Test 
+	 
 	  public void testFindUserByEmail() { 
 		  String email = "hariharan08112001@gmail.com"; 
 		  User user = repo.findByEmail(email);
