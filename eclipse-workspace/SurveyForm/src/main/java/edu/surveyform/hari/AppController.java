@@ -20,7 +20,7 @@ public class AppController {
 	@GetMapping("")
 	@RequestMapping(value="/", method= RequestMethod.GET)
 	public String viewHomePage() {
-		return "index";
+		return "login";
 	}
 
 	@GetMapping("/login")

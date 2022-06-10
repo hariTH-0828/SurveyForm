@@ -4,14 +4,35 @@
 		<meta charset="UTF-8">
 		<title>Success - Survey Form</title>
 		<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+		<script src="https://kit.fontawesome.com/91ec5d39d3.js" crossorigin="anonymous"></script>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+			.heading{
+				margin: 30px;
+    			font-size: 35px;
+				text-align: center;
+				font-weight: bold;
+				font-family: 'Ubuntu', sans-serif;
+			}
+
+			.link_btn {
+				padding: 10px;
+				color: black;
+				margin: auto;
+				border-radius: 29px;
+				border: 1px solid black;
+				text-decoration: none;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container text-center">
 			<div>
-				<h2>Successfully Signed In</h2>
-				<h4><a th:href="@{/login}">
+				<p class="heading">Your Account Register Successfully.</p>
+				<a th:href="@{/login}" class="link_btn" style="text-decoration: none;">
 					Click to Login
-				</a></h4>
+				</a>
 			</div>
 		</div>
 	</body>
