@@ -32,7 +32,7 @@ public class AppController {
 	@GetMapping("/register")
 	public String showSignUpForm(Model model) {
 		model.addAttribute("user", new User());
-		return "signup_form";
+		return "register_form";
 	}
 	
 	@PostMapping("/process_register")
@@ -51,10 +51,10 @@ public class AppController {
 		return "login_success";
 	}
 	
-	@GetMapping("/list_users")
+	/*@GetMapping("/list_users")
 	public String viewUsersList(Model model) {
 		List<User> listUsers = repo.findAll();
 		model.addAttribute("listUsers", listUsers);
 		return "users";
-	}
+	}*/
 }
