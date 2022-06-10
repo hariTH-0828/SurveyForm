@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class AppController {
@@ -16,10 +18,17 @@ public class AppController {
 	private UserRepository repo;
 
 	@GetMapping("")
+	@RequestMapping(value="/", method= RequestMethod.GET)
 	public String viewHomePage() {
 		return "index";
 	}
-	
+
+	@GetMapping("/login")
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String showLoginPage(){
+		return "login";
+	}
+
 	@GetMapping("/register")
 	public String showSignUpForm(Model model) {
 		model.addAttribute("user", new User());
@@ -34,6 +43,12 @@ public class AppController {
 		
 		repo.save(user);
 		return "register_success";
+	}
+
+	@GetMapping("/login_success")
+	@RequestMapping(value = "/login_success", method = RequestMethod.GET)
+	public String successLogin(){
+		return "login_success";
 	}
 	
 	@GetMapping("/list_users")
