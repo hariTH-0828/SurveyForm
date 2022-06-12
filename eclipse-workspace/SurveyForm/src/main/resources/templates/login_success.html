@@ -3,21 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Survey Form</title>
-    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+        .username{
+            margin: 5px;
+            padding: 5px;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: bold;
+        }
+        .user_container{
+            padding-right: 5em;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/91ec5d39d3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container text-center">
-        <div>
-            <form th:action="@{/logout}" method="post">
-                <p>
-                    Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+<form th:action="@{/logout}" method="post">
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 navbar_logo">survey form</span>
+            <div class="d-flex align-items-center username_container">
+                <p class="username">
+                    [[${#request.userPrincipal.principal.fullName}]]
+                    <input type="submit" value="sign out" style="
+                    background-color: white;
+                    text-decoration: none;
+                    border: 0px solid white;
+                    font-family: 'Ubuntu', sans-serif;
+                    font-weight: bold;
+                    font-size: 18px;
+                    color: #0700ec;">
                 </p>
-                <input type="submit" value="Sign Out">
-            </form>
+            </div>
         </div>
-    </div>
-    <div>
-        <h2>Logged in Successfully!.</h2>
-    </div>
+    </nav>
+</form>
 </body>
 </html>
