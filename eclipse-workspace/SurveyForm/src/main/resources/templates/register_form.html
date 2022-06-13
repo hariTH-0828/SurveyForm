@@ -9,6 +9,11 @@
       .fa-fw{
         margin-top: 30px;
       }
+      .fa fa-address-book-o phonebook{
+        font-size: 30px;
+        margin-top: 30px;
+        margin-right: 18px;
+      }
     </style>
 	</head>
 	<body>
@@ -36,16 +41,19 @@
                           <div class="d-flex flex-row align-items-center mb-4">
                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                             <div class="form-outline flex-fill mb-0">
-                              <label class="form-label" >First Name</label>
+                              <label class="form-label" >Full Name</label>
                               <input type="text" class="form-control" th:field="*{firstName}" minlength="4" maxlength="25"/>
                             </div>
                           </div>
 
                           <div class="d-flex flex-row align-items-center mb-4">
-                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                            <i class="fa fa-address-book-o" style="font-size: 25px;
+                            margin-top: 30px;
+                            margin-right: 18px;
+                            margin-left: 3px;"></i>
                             <div class="form-outline flex-fill mb-0">
-                              <label class="form-label">Last Name</label>
-                              <input type="text" class="form-control" th:field="*{lastName}" minlength="1" maxlength="25"/>
+                              <label class="form-label">Phone No</label>
+                              <input type="text" class="form-control" th:field="*{phoneNo}" minlength="10" maxlength="10"/>
                             </div>
                           </div>
 

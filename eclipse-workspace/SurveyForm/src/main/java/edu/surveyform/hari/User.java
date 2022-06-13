@@ -3,7 +3,7 @@ package edu.surveyform.hari;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "loginDetails")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,10 +17,9 @@ public class User {
     
     @Column(nullable = false, length = 20)
     private String firstName;
-    
-    @Column(nullable = false, length = 20)
-    private String lastName;
 
+    @Column(nullable = false,length = 10)
+    private String phoneNo;
 
     public Long getId() {
         return id;
@@ -54,12 +53,12 @@ public class User {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getPhoneNo() {
+        return phoneNo;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
     }
 
 }
