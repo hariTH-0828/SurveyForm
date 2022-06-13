@@ -62,7 +62,7 @@
 				     	<form name="f" th:action="@{/login}" method="post">
 							<p class="signin_heading">Sign In</p>
 							
-							<div th:if="${param.error}" class="alert alert-error">
+							<div th:if="${param.error}" class="alert alert-danger">
 								Invalid Email and Password.
 							</div>
 							
