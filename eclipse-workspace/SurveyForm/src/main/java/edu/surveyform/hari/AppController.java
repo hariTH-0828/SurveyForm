@@ -1,8 +1,9 @@
 package edu.surveyform.hari;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,13 +25,27 @@ public class AppController {
 	}
 
 	@GetMapping("/login")
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+//	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String showLoginPage(){
+		if(isAuthenticated()){
+			return "redirect:login_success";
+		}
 		return "login";
+	}
+
+	private boolean isAuthenticated() {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if(authentication == null || AnonymousAuthenticationToken.class.isAssignableFrom(authentication.getClass())){
+			return false;
+		}
+		return authentication.isAuthenticated();
 	}
 
 	@GetMapping("/register")
 	public String showSignUpForm(Model model) {
+		if(isAuthenticated()){
+			return "redirect:login_success";
+		}
 		model.addAttribute("user", new User());
 		return "register_form";
 	}

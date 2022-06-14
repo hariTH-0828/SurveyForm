@@ -11,7 +11,6 @@ public class User {
 
     @Column(nullable = false, unique = true, length = 45)
     private String email;
-    
     @Column(nullable = false, length = 64)
     private String password;
     
@@ -60,5 +59,4 @@ public class User {
     public void setPhoneNo(String phoneNo) {
         this.phoneNo = phoneNo;
     }
-
 }
